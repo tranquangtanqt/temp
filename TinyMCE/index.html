@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+
+  <h1>TinyMCE Quick Start Guide</h1>
+    <form method="post">
+        <textarea id="myTextArea">Hello, World!</textarea>
+        <button type="button" onclick="getContent()">CLick</button>
+    </form>
+    <script src="tinymce_6.0.1/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinyMCE.init({
+            selector: '#myTextArea',
+            mode : "specific_textareas",
+            editor_selector : "mceEditor"  
+        });
+
+        function getContent(){
+            var myContent = tinyMCE.get("myTextArea").getContent();
+            console.log(myContent);
+        }
+        
+      </script>
+  </body>
+</html>
