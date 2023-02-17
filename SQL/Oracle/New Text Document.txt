@@ -1,0 +1,14 @@
+Để vào SQLPlus từ CMD:
+- Đăng nhập vào Oracle sử dụng user database system hoặc sys với vai trò dba:
+$ sqlplus system/oracle as sysdba
+hoặc
+$ sqlplus / as sysdba
+
+- Nếu đã kết nối vào một user, muốn chuyển sang user khác sử dụng cú pháp: 
+
+SQL> connect scott/oracle
++ Hoặc kết nối vào với vai trò Database Admin: 
+
+SQL> connect / as sysdba
+SQL> connect sys/oracle as sysdba
+SQL> connect system/oracle as sysdba

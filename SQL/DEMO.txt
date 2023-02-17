@@ -1,0 +1,64 @@
+--DROP TABLE DEMO;
+CREATE TABLE DEMO( 
+    id int NOT NULL 
+    , name varchar(255)
+    , create_at DATETIME(6)
+    , PRIMARY KEY (id)
+
+);
+
+INSERT INTO DEMO
+(id, name, create_at)
+VALUES(1, '1', CURRENT_TIMESTAMP);
+INSERT INTO DEMO
+(id, name, create_at)
+VALUES(2, '1', CURRENT_TIMESTAMP);
+INSERT INTO DEMO
+(id, name, create_at)
+VALUES(3, '1', CURRENT_TIMESTAMP);
+INSERT INTO DEMO
+(id, name, create_at)
+VALUES(4, '1', CURRENT_TIMESTAMP);
+INSERT INTO DEMO
+(id, name, create_at)
+VALUES(5, '1', CURRENT_TIMESTAMP);
+
+INSERT INTO DEMO
+(id, name, create_at)
+VALUES(6, '2', CURRENT_TIMESTAMP);
+INSERT INTO DEMO
+(id, name, create_at)
+VALUES(7, '2', CURRENT_TIMESTAMP);
+INSERT INTO DEMO
+(id, name, create_at)
+VALUES(8, '2', CURRENT_TIMESTAMP);
+INSERT INTO DEMO
+(id, name, create_at)
+VALUES(9, '2', CURRENT_TIMESTAMP);
+INSERT INTO DEMO
+(id, name, create_at)
+VALUES(10, '2', CURRENT_TIMESTAMP);
+
+SELECT * FROM DEMO;
+
+DELETE 
+FROM
+    DEMO 
+WHERE
+    id NOT IN ( 
+        SELECT
+            id 
+        FROM
+            ( 
+                SELECT
+                    t.*
+                    , ROW_NUMBER() OVER (PARTITION BY name ORDER BY create_at DESC) AS total 
+                FROM
+                    DEMO t
+            ) t 
+        WHERE
+            total <= 2
+    );
+
+
+SELECT * FROM DEMO;
