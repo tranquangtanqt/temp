@@ -1,0 +1,24 @@
+1.Vết SQL lấy các employee với các điều kiện sau:
+- Thuộc dept MARKETING 
+- Đến từ MELBOURNE hoặc PERTH
+- Có mức lương grade từ 3 đến 5
+- Có kinh nghiệm trên 5 năm
+
+2.Viết SQL lấy các employee có thâm niên lâu hơn manager của người đó
+
+3.Viết SQL lấy nhân viên cấp dưới của mỗi employee
+
+4.Viết SQL lấy nhân viên cấp trên của mỗi employee
+
+5.Viết SQL lấy id và tên dep có nhân viên có lương cao nhất
+
+6.Viết SQL lấy vịtrí dep có nhân viên có có thâm niên lâu nhất
+
+7.Viết SQL lấy job name có salary thấp nhất
+
+8.Viết SQL lấy danh sách tên của dep có ít nhất 4 nhân viên
+9.Viết SQL lấy tên dep, grace, id của employee với điều kiện:
+  - dep có ít nhất 2 nhân viên
+  - nhân viên có job là salesman
+10.Viết SQL lấy trung lương và tổng thù lao của mỗi job
+
